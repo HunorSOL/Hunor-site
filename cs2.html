@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 Simulator | Dreams & Nightmares</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cs2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="cs2-body">
+    <nav class="navbar">
+        <a href="index.html" class="back-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Back to Home
+        </a>
+        <div class="logo">Dreams & Nightmares</div>
+    </nav>
+
+    <main class="cs2-container">
+        <header class="case-header">
+            <h1 id="case-title">Loading Cases...</h1>
+            <p>Unlock the mysteries. What will you find?</p>
+        </header>
+
+        <div class="case-selector-container">
+            <select id="case-selector" class="case-selector" disabled>
+                <option value="">Loading...</option>
+            </select>
+        </div>
+
+        <div class="roulette-wrapper">
+            <div class="selector-line"></div>
+            <div class="spinner-container" id="spinner-container">
+                <div class="spinner" id="spinner">
+                    <!-- Cards will be generated here -->
+                </div>
+            </div>
+            
+            <div class="overlay-left"></div>
+            <div class="overlay-right"></div>
+        </div>
+
+        <div class="controls">
+            <button id="open-btn" class="open-btn">Unlock Case (1 Key)</button>
+            <label class="fast-open-label">
+                <input type="checkbox" id="fast-open-toggle"> Skip popups (except Red & Gold)
+            </label>
+        </div>
+
+        <div class="inventory-section">
+            <h2>Your Inventory</h2>
+            <div class="inventory-grid" id="inventory-grid">
+                <!-- Won items will appear here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Unboxing Modal -->
+    <div id="unboxing-modal" class="modal hidden">
+        <div class="modal-content" id="modal-content">
+            <h2 id="modal-title">YOU OPENED!</h2>
+            <div id="modal-item-display"></div>
+            <button id="modal-close-btn" class="open-btn" style="margin-top: 2rem;">Continue</button>
+        </div>
+    </div>
+
+    <div class="ambient-glow glow-1" style="background: radial-gradient(circle, rgba(211, 44, 230, 0.15) 0%, rgba(10, 10, 15, 0) 70%);"></div>
+    <div class="ambient-glow glow-2" style="background: radial-gradient(circle, rgba(75, 105, 255, 0.15) 0%, rgba(10, 10, 15, 0) 70%);"></div>
+
+    <script src="cs2.js"></script>
+</body>
+</html>

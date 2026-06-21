@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="top-bar">
+        <a href="index.html" class="btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to Home
+        </a>
+    </nav>
+
+    <main class="info-section">
+        <div class="content-wrapper">
+            <h1 class="glow-text">Information</h1>
+            <p class="subtitle">Click the text below to edit it. It will be saved automatically to your browser.</p>
+            
+            <div id="editable-content" class="editable-area" contenteditable="true" spellcheck="false">
+                This is your editable info text. You can replace this content with whatever you want, and it will persist here for you!
+            </div>
+        </div>
+    </main>
+
+    <div class="ambient-glow glow-1"></div>
+
+    <script>
+        const editableContent = document.getElementById('editable-content');
+        
+        // Load saved content from local storage
+        const savedContent = localStorage.getItem('infoText');
+        if (savedContent) {
+            editableContent.innerHTML = savedContent;
+        }
+
+        // Save content to local storage whenever it is edited
+        editableContent.addEventListener('input', () => {
+            localStorage.setItem('infoText', editableContent.innerHTML);
+        });
+    </script>
+</body>
+</html>

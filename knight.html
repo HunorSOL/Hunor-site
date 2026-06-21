@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Knight</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="knight.css">
+</head>
+<body>
+    <nav class="top-bar">
+        <a href="index.html" class="btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6"/>
+            </svg>
+            Back to Home
+        </a>
+    </nav>
+    <main class="game-container">
+        <div class="game-ui">
+            <div style="display: flex; gap: 2rem; align-items: center;">
+                <div class="health-bar" id="health-bar">
+                    <div class="heart active"></div>
+                    <div class="heart active"></div>
+                    <div class="heart active"></div>
+                    <div class="heart active"></div>
+                    <div class="heart active"></div>
+                </div>
+                <div class="soul-meter" id="soul-meter">
+                    <div class="soul-dot"></div>
+                    <div class="soul-dot"></div>
+                    <div class="soul-dot"></div>
+                    <span class="soul-hint" style="color: #fff; font-weight: bold; font-size: 0.9rem; margin-left: 0.5rem; text-shadow: 0 0 5px #fff;">[F] Heal (1) | [E] Spell (3)</span>
+                </div>
+            </div>
+            <div class="controls-hint" style="font-size: 0.8rem;">
+                [A/D] Move &nbsp;|&nbsp; [SPACE] Jump &nbsp;|&nbsp; [SHIFT] Dash &nbsp;|&nbsp; [J] Attack &nbsp;|&nbsp; [E] Spell &nbsp;|&nbsp; [S+J] in air to Pogo
+            </div>
+        </div>
+        <div class="canvas-wrapper">
+            <canvas id="gameCanvas" width="800" height="600"></canvas>
+            <div id="game-over" class="overlay hidden">
+                <h2>You Lost</h2>
+                <button id="restart-btn" class="btn primary-btn">Start Again</button>
+            </div>
+            <div id="game-win" class="overlay hidden">
+                <h2>Level Complete!</h2>
+                <button id="restart-win-btn" class="btn primary-btn">Play Again</button>
+            </div>
+        </div>
+    </main>
+    <script src="knight.js"></script>
+</body>
+</html>

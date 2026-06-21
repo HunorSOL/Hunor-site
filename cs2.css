@@ -1,0 +1,385 @@
+.cs2-body {
+    background-color: #0f1115;
+    color: #e2e8f0;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.cs2-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+    backdrop-filter: blur(5px);
+    margin: 1rem 0 0 2rem;
+}
+.back-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.case-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.case-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, #a855f7, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(236, 72, 153, 0.3);
+}
+
+.case-header p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+}
+
+/* Case Selector */
+.case-selector-container {
+    margin-bottom: 3rem;
+}
+
+.case-selector {
+    background: rgba(30, 41, 59, 0.8);
+    color: white;
+    border: 1px solid #475569;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: border-color 0.2s;
+}
+
+.case-selector:hover {
+    border-color: #eab308;
+}
+
+.case-selector:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Roulette Spinner */
+.roulette-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 220px;
+    background: #1a1c23;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.8), 0 10px 30px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.spinner-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.spinner {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    /* Transition is added via JS dynamically for the spin */
+    will-change: transform;
+}
+
+.selector-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: #eab308;
+    z-index: 10;
+    box-shadow: 0 0 15px #eab308, 0 0 30px #eab308;
+    pointer-events: none;
+}
+
+.selector-line::before, .selector-line::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+.selector-line::before {
+    top: 0;
+    border-top: 15px solid #eab308;
+}
+
+.selector-line::after {
+    bottom: 0;
+    border-bottom: 15px solid #eab308;
+}
+
+.overlay-left, .overlay-right {
+    position: absolute;
+    top: 0;
+    width: 25%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.overlay-left {
+    left: 0;
+    background: linear-gradient(to right, #1a1c23 0%, transparent 100%);
+}
+
+.overlay-right {
+    right: 0;
+    background: linear-gradient(to left, #1a1c23 0%, transparent 100%);
+}
+
+/* Weapon Cards */
+.weapon-card {
+    min-width: 180px;
+    height: 160px;
+    margin: 0 10px;
+    background: #252830;
+    border-bottom: 5px solid #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.weapon-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+    opacity: 0.5;
+}
+
+.weapon-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    z-index: 2;
+    margin-top: auto;
+    width: 100%;
+}
+
+.weapon-image-placeholder {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 2;
+}
+
+.weapon-image-placeholder svg {
+    opacity: 0.8;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.5));
+}
+
+/* Rarities */
+.rarity-blue { border-bottom-color: #4b69ff; box-shadow: inset 0 -20px 40px -20px rgba(75, 105, 255, 0.4); }
+.rarity-blue .weapon-name { color: #4b69ff; }
+
+.rarity-purple { border-bottom-color: #8847ff; box-shadow: inset 0 -20px 40px -20px rgba(136, 71, 255, 0.4); }
+.rarity-purple .weapon-name { color: #8847ff; }
+
+.rarity-pink { border-bottom-color: #d32ce6; box-shadow: inset 0 -20px 40px -20px rgba(211, 44, 230, 0.4); }
+.rarity-pink .weapon-name { color: #d32ce6; }
+
+.rarity-red { border-bottom-color: #eb4b4b; box-shadow: inset 0 -20px 40px -20px rgba(235, 75, 75, 0.4); }
+.rarity-red .weapon-name { color: #eb4b4b; }
+
+.rarity-gold { border-bottom-color: #e4ae39; box-shadow: inset 0 -20px 40px -20px rgba(228, 174, 57, 0.4); }
+.rarity-gold .weapon-name { color: #e4ae39; }
+
+
+/* Controls */
+.controls {
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.fast-open-label {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+}
+
+.fast-open-label:hover {
+    color: #e2e8f0;
+}
+
+.fast-open-label input {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    accent-color: #eab308;
+}
+
+.open-btn {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 800;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.open-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(16, 185, 129, 0.4);
+}
+
+.open-btn:active {
+    transform: translateY(2px);
+}
+
+.open-btn:disabled {
+    background: #334155;
+    color: #94a3b8;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Inventory */
+.inventory-section {
+    width: 100%;
+    max-width: 1000px;
+    background: rgba(30, 41, 59, 0.3);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.inventory-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #f8fafc;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 0.5rem;
+}
+
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.inventory-grid .weapon-card {
+    height: 140px;
+    min-width: unset;
+    margin: 0;
+    animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Unboxing Modal */
+.modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-content {
+    background: #1a1c23;
+    padding: 3rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    border: 1px solid #334155;
+    transform: scale(1);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 400px;
+}
+
+.modal.hidden .modal-content {
+    transform: scale(0.8);
+}
+
+.modal h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+
+.modal .weapon-card {
+    transform: scale(1.5);
+    margin-bottom: 3rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="top-bar">
+        <a href="info.html" class="btn info-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            Info
+        </a>
+    </nav>
+
+    <main class="hero-section">
+        <div class="large-text-container">
+            <h1 class="glow-text">Welcome to My Space</h1>
+        </div>
+
+        <div class="projects-grid">
+            <a href="pacman.html" class="project-card">
+                <div class="project-image-placeholder">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                        stroke="var(--text-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M12 2a10 10 0 0 0-7.39 16.7l5.4-5.4A3.99 3.99 0 0 1 12 8a4 4 0 0 1 2.5 7.11l4.89 4.89A10 10 0 0 0 12 2Z">
+                        </path>
+                        <circle cx="15.5" cy="8.5" r="1.5" fill="var(--text-accent)"></circle>
+                    </svg>
+                </div>
+                <div class="project-info">
+                    <h3>Pacman</h3>
+                    <p>A classic arcade game built with HTML5 Canvas and vanilla JavaScript.</p>
+                </div>
+            </a>
+            <a href="knight.html" class="project-card">
+                <div class="project-image-placeholder"
+                    style="background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(239, 68, 68, 0.1)); border-color: rgba(239, 68, 68, 0.2);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                        stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z">
+                        </path>
+                        <circle cx="12" cy="13" r="3"></circle>
+                    </svg>
+                </div>
+                <div class="project-info">
+                    <h3>Neon Knight</h3>
+                    <p>A fast-paced 2D platformer with combat, gravity physics, and glowing animations.</p>
+                </div>
+            </a>
+            <a href="cs2.html" class="project-card">
+                <div class="project-image-placeholder" style="background: linear-gradient(135deg, rgba(234, 179, 8, 0.1), rgba(202, 138, 4, 0.1)); border-color: rgba(234, 179, 8, 0.2);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                </div>
+                <div class="project-info">
+                    <h3>CS2 Case Simulator</h3>
+                    <p>Experience the thrill of the Dreams & Nightmares case with exact odds and a spinning roulette.</p>
+                </div>
+            </a>
+            <!-- Future projects will be added here -->
+        </div>
+    </main>
+
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+</body>
+
+</html>

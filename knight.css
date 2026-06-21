@@ -1,0 +1,101 @@
+/* knight.css */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    flex: 1;
+    animation: fadeUp 0.8s ease-out forwards;
+}
+
+.game-ui {
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.health-bar {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.heart {
+    width: 24px;
+    height: 24px;
+    background-color: #333;
+    clip-path: path('M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z');
+    transition: background-color 0.3s ease;
+}
+
+.heart.active {
+    background-color: #ef4444;
+    filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.6));
+}
+
+.soul-meter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.soul-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #333;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.soul-dot.active {
+    background-color: #fff;
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff;
+}
+
+.controls-hint {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.canvas-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px -15px rgba(239, 68, 68, 0.3);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+#gameCanvas {
+    display: block;
+    background-color: #0a0a0f; /* very dark background */
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(10, 10, 15, 0.85);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.overlay.hidden {
+    display: none !important;
+}
+
+.overlay h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #fff;
+    text-shadow: 0 0 20px currentColor;
+}
+
+#game-over h2 { color: #ef4444; }
+#game-win h2 { color: #10b981; }
