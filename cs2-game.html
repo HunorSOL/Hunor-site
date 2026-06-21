@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 5v5 Mirage</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cs2-game.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body class="cs2-game-body">
+    <nav class="navbar" style="position: absolute; top: 0; left: 0; right: 0; z-index: 100;">
+        <a href="index.html" class="back-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Back to Home
+        </a>
+        <div class="logo">Mirage 5v5</div>
+        <div class="score-board">
+            <span id="score-t" class="team-t">0</span>
+            <span>-</span>
+            <span id="score-ct" class="team-ct">0</span>
+        </div>
+    </nav>
+
+    <!-- UI Overlay -->
+    <div id="game-ui">
+        <div class="hud-bottom-left">
+            <div class="hp-bar-container">
+                <div class="hp-bar" id="player-hp-bar"></div>
+            </div>
+            <div class="hp-text"><span id="player-hp">100</span> HP</div>
+        </div>
+        
+        <div class="hud-bottom-right">
+            <div class="weapon-selector">
+                <div class="weapon-slot active" id="slot-1">1: AK-47</div>
+                <div class="weapon-slot" id="slot-2">2: HE Grenade <span id="grenade-count">(1)</span></div>
+                <div class="weapon-slot" id="slot-3">3: Knife</div>
+            </div>
+        </div>
+
+        <div id="killfeed" class="killfeed"></div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="round-over" class="round-over hidden">
+        <h1 id="round-winner-text">TERRORISTS WIN</h1>
+        <button id="restart-btn" class="open-btn">Play Next Round</button>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <script src="cs2-game.js"></script>
+</body>
+</html>
