@@ -1,0 +1,107 @@
+.drive-body {
+    margin: 0;
+    overflow: hidden;
+    background: #000;
+    font-family: 'Share Tech Mono', 'Inter', monospace;
+    user-select: none;
+}
+
+canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
+
+#ui-layer {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.back-btn {
+    pointer-events: auto;
+}
+
+#speedometer {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    background: rgba(0,0,0,0.7);
+    border: 2px solid #a855f7;
+    border-radius: 12px;
+    padding: 20px 30px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+#speed-val {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 10px #a855f7;
+}
+
+.garage-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    backdrop-filter: blur(10px);
+}
+
+.garage-overlay.hidden {
+    display: none;
+}
+
+.car-options {
+    display: flex;
+    gap: 30px;
+}
+
+.car-card {
+    background: rgba(30, 41, 59, 0.8);
+    border: 2px solid #475569;
+    padding: 30px;
+    border-radius: 16px;
+    width: 250px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    pointer-events: auto;
+}
+
+.car-card h2 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.car-card p {
+    color: #94a3b8;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    color: #a855f7;
+    font-size: 1.2rem;
+}
+
+.car-card:hover {
+    transform: translateY(-10px);
+    border-color: #a855f7;
+    background: rgba(168, 85, 247, 0.15);
+    box-shadow: 0 15px 40px rgba(168, 85, 247, 0.4);
+}

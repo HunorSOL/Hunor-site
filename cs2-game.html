@@ -32,6 +32,9 @@
         </div>
         
         <div class="hud-bottom-right">
+            <div class="ammo-display" id="ammo-display">
+                <span id="ammo-current">30</span> <span style="font-size: 20px; color: #94a3b8;">/</span> <span id="ammo-reserve" style="font-size: 24px; color: #94a3b8;">60</span>
+            </div>
             <div class="weapon-selector">
                 <div class="weapon-slot active" id="slot-1">1: AK-47</div>
                 <div class="weapon-slot" id="slot-2">2: HE Grenade <span id="grenade-count">(1)</span></div>
@@ -46,6 +49,48 @@
     <div id="round-over" class="round-over hidden">
         <h1 id="round-winner-text">TERRORISTS WIN</h1>
         <button id="restart-btn" class="open-btn">Play Next Round</button>
+    </div>
+
+    <!-- Damage Overlay -->
+    <div id="damage-overlay"></div>
+
+    <!-- Buy Menu -->
+    <div id="buy-menu" class="round-over">
+        <h1 style="font-size: 3.5rem; margin-bottom: 0;">BUY MENU</h1>
+        
+        <div style="display: flex; gap: 50px; margin-top: 2rem;">
+            <!-- Primary Weapons -->
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <h2 style="color: #94a3b8; text-align: center; margin: 0;">PRIMARY WEAPON</h2>
+                <button class="buy-btn active" id="btn-assault" onclick="selectPrimary('assault')">
+                    <div style="font-size: 1.5rem; margin-bottom: 10px;">AK-47</div>
+                    <div style="font-size: 0.9rem; color: #94a3b8;">Full Auto • Mid Range</div>
+                </button>
+                <button class="buy-btn" id="btn-sniper" onclick="selectPrimary('sniper')">
+                    <div style="font-size: 1.5rem; margin-bottom: 10px;">AWP Sniper</div>
+                    <div style="font-size: 0.9rem; color: #94a3b8;">1-Tap • Infinite Range</div>
+                </button>
+                <button class="buy-btn" id="btn-shotgun" onclick="selectPrimary('shotgun')">
+                    <div style="font-size: 1.5rem; margin-bottom: 10px;">Nova Shotgun</div>
+                    <div style="font-size: 0.9rem; color: #94a3b8;">Pellet Spread • Close Range</div>
+                </button>
+            </div>
+            
+            <!-- Utility -->
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <h2 style="color: #94a3b8; text-align: center; margin: 0;">UTILITY</h2>
+                <button class="buy-btn active" id="btn-he" onclick="selectUtility('he')">
+                    <div style="font-size: 1.5rem; margin-bottom: 10px;">HE Grenade</div>
+                    <div style="font-size: 0.9rem; color: #94a3b8;">Explosive • Area Damage</div>
+                </button>
+                <button class="buy-btn" id="btn-smoke" onclick="selectUtility('smoke')">
+                    <div style="font-size: 1.5rem; margin-bottom: 10px;">Smoke Grenade</div>
+                    <div style="font-size: 0.9rem; color: #94a3b8;">Blocks Line of Sight • 10s</div>
+                </button>
+            </div>
+        </div>
+        
+        <button class="open-btn" style="margin-top: 3rem; font-size: 2rem; padding: 20px 60px;" onclick="deploy()">DEPLOY</button>
     </div>
 
     <canvas id="gameCanvas"></canvas>

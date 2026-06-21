@@ -1,0 +1,77 @@
+.flappy-body {
+    margin: 0;
+    overflow: hidden;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Share Tech Mono', monospace;
+    user-select: none;
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    max-width: 600px; /* Keep it mobile/portrait proportioned */
+    border-left: 2px solid #333;
+    border-right: 2px solid #333;
+    background: #050510;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(6, 182, 212, 0.1);
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#score-display {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 20px #06b6d4;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+    backdrop-filter: blur(5px);
+}
+
+.overlay.hidden {
+    display: none;
+}
+
+.open-btn {
+    background: rgba(6, 182, 212, 0.1);
+    border: 2px solid #06b6d4;
+    color: #06b6d4;
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+}
+
+.open-btn:hover {
+    background: #06b6d4;
+    color: #000;
+    box-shadow: 0 0 30px #06b6d4;
+}

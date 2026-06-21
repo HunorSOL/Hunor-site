@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Drift 3D</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="drive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Import Three.js & Post-Processing -->
+    <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+</head>
+<body class="drive-body">
+
+    <!-- UI Overlay -->
+    <div id="ui-layer">
+        <a href="index.html" class="back-btn" style="position: absolute; top: 20px; left: 20px;">← Back to Hub</a>
+        
+        <div id="speedometer">
+            <span id="speed-val">0</span>
+            <span style="font-size: 1.5rem; color: #94a3b8;">KM/H</span>
+        </div>
+    </div>
+
+    <!-- Garage Menu -->
+    <div id="garage-menu" class="garage-overlay">
+        <h1 style="font-size: 4rem; text-shadow: 0 0 20px #a855f7; margin-bottom: 2rem; color: #fff;">CHOOSE YOUR RIDE</h1>
+        
+        <div class="car-options">
+            <div class="car-card" onclick="selectCar('gwagon')">
+                <h2>G-WAGON</h2>
+                <p>Heavy, Tall, Off-Road King</p>
+                <div class="stats">
+                    <span>Speed: ▀▀▀</span>
+                    <span>Handling: ▀▀▀▀</span>
+                    <span>Weight: ▀▀▀▀▀</span>
+                </div>
+            </div>
+            
+            <div class="car-card" onclick="selectCar('m4')">
+                <h2>BMW M4 COMP</h2>
+                <p>Sleek, Balanced, Sporty</p>
+                <div class="stats">
+                    <span>Speed: ▀▀▀▀</span>
+                    <span>Handling: ▀▀▀▀▀</span>
+                    <span>Weight: ▀▀▀</span>
+                </div>
+            </div>
+            
+            <div class="car-card" onclick="selectCar('lambo')">
+                <h2>LAMBORGHINI</h2>
+                <p>Extremely Fast, Slippery</p>
+                <div class="stats">
+                    <span>Speed: ▀▀▀▀▀</span>
+                    <span>Handling: ▀▀</span>
+                    <span>Weight: ▀▀</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="drive.js"></script>
+</body>
+</html>
